@@ -128,8 +128,14 @@ public class MyAutoGenerator {
 
         // 开启mapper注解
         if (BooleanUtils.isTrue(bo.getMapperAnnotation())) {
-            mapperBuilder.enableMapperAnnotation();
+            mapperBuilder.mapperAnnotation(org.apache.ibatis.annotations.Mapper.class);
+        }
+
+        if (BooleanUtils.isTrue(bo.getFileOverride())) {
+            builder.controllerBuilder().enableFileOverride();
+            builder.entityBuilder().enableFileOverride();
+            builder.serviceBuilder().enableFileOverride();
+            builder.mapperBuilder().enableFileOverride();
         }
     }
-
 }

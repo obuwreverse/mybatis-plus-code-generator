@@ -108,5 +108,7 @@ public class CodeGeneratorBo {
     // mapper注解
     private Boolean mapperAnnotation;
 
+    //文件覆盖
+    private Boolean fileOverride;
 
 }
